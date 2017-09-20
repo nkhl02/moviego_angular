@@ -1,0 +1,22 @@
+<div class="container">
+
+
+
+
+<div *ngIf="movies" class="row">
+
+<div *ngFor="let movie of movies.results  | paginate: { itemsPerPage: 3, currentPage: p }">
+        <app-movie-detail [movie]="movie"></app-movie-detail>
+            
+ </div>
+
+<span>
+  <pagination-controls (pageChange)="p = $event">
+  	
+  </pagination-controls>
+  </span>
+</div>
+
+            </div>
+
+           

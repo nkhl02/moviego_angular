@@ -1,0 +1,21 @@
+<div class="d-inline-flex p-2 img-thumbnail img-fluid img" >
+	 <article class="col-md-12 ">
+                <h6>
+                       <span>{{movie.title}}</span>
+                </h6>
+                <div *ngIf="movie.poster_path; then thenBlock else elseBlock " class="row"> </div>
+                <ng-template #thenBlock>
+                <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}"    class="img-thumbnail img-fluid img"></ng-template>
+               
+          <ng-template #elseBlock>
+     <img src="https://cdn.browshot.com/static/images/not-found.png"    class="img-thumbnail img-fluid img" height="400px" width="300px">
+          </ng-template>
+                <p class="lead">Release Date- {{movie.release_date}}</p>
+                
+                <div>
+                <button type="button" (click)=addfav(movie) class="btn btn-outline-success" routerLink="/favourites">Add</button>
+                <button type="button" class="btn btn-outline-warning">Details</button>
+                </div>
+            </article>   
+             
+</div>
